@@ -17,7 +17,7 @@ final theme = ThemeData().copyWith(
     titleTextStyle: TextStyle(
       color: colorScheme.onBackground,
       fontFamily: GoogleFonts.poppins().fontFamily,
-      fontSize: 22,
+      fontSize: 18,
       fontWeight: FontWeight.w700
     )
   )
