@@ -1,3 +1,7 @@
+import 'package:intl/intl.dart';
+
+final formatter = DateFormat.MMMMd('en_US').add_jm();
+
 class Transaction {
   Transaction({
     required this.transactionType,
@@ -8,6 +12,8 @@ class Transaction {
   final String transactionType;
   final double amount;
   final DateTime date;
+
+  String get formattedDate => formatter.format(date);
 }
 
 class BankCard {
