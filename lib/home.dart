@@ -6,7 +6,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+        title: const Text('Cards'),
+        centerTitle: true,
+        forceMaterialTransparency: true,
+      ),
     );
   }
 }
