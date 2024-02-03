@@ -7,9 +7,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Cards'),
-        centerTitle: true,
+        title: const Text('Your Cards'),
         forceMaterialTransparency: true,
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(18.0),
+        child: Column(
+          children: [
+            Text('Card 1'),
+            Text('Card 2'),
+            Text('Card 3'),
+          ],
+        ),
       ),
     );
   }
