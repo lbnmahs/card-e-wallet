@@ -74,8 +74,8 @@ List<BankCard> dummyCards = [
     balance: 2000,
     expiryDate: DateTime.now().add(const Duration(days: 365)),
     gradient: [
-      Colors.blue.shade200,
-      Colors.blue.shade400
+      Colors.orange.shade600,
+      Colors.amberAccent.shade700
     ]
   ),
   BankCard(
@@ -105,14 +105,14 @@ List<BankCard> dummyCards = [
         isExpense: false
       ),
     ],
-    bankName: 'KCB',
+    bankName: 'ABSA',
     cardType: 'Credit',
     cardNumber: '**** **** **** 9101',
     balance: 3000,
     expiryDate: DateTime.now().add(const Duration(days: 365)),
     gradient: [
-      Colors.green.shade200,
-      Colors.green.shade400
+      Colors.red.shade200,
+      Colors.red.shade400
     ]
   ),
   BankCard(
@@ -142,14 +142,14 @@ List<BankCard> dummyCards = [
         isExpense: false
       ),
     ],
-    bankName: 'Standard Chartered',
+    bankName: 'NCBA',
     cardType: 'Prepaid',
     cardNumber: '**** **** **** 1234',
     balance: 1000,
     expiryDate: DateTime.now().add(const Duration(days: 365)),
     gradient: [
-      Colors.purple.shade200,
-      Colors.purple.shade400
+      Colors.yellow.shade800,
+      Colors.yellow.shade500
     ]
   ),
   BankCard(
@@ -179,7 +179,7 @@ List<BankCard> dummyCards = [
         isExpense: false
       ),
     ],
-    bankName: 'Equity',
+    bankName: 'Family Bank',
     cardType: 'Debit',
     cardNumber: '**** **** **** 5678',
     balance: 2000,

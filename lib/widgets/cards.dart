@@ -23,6 +23,7 @@ class _UserCardsState extends State<UserCards> {
     super.initState();
     userCards = widget.availableCards;
   }
+
   @override
   Widget build(BuildContext context) {
     return Flexible(
@@ -30,7 +31,7 @@ class _UserCardsState extends State<UserCards> {
       child: CardSwiper(
         cardBuilder: ((context, index, horizontalOffsetPercentage, verticalOffsetPercentage) {
           return Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(15),
             width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -45,34 +46,34 @@ class _UserCardsState extends State<UserCards> {
               crossAxisAlignment: CrossAxisAlignment.start,
               
               children: [
-                Text(
-                  userCards[index].bankName,
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  userCards[index].cardType,
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  userCards[index].cardNumber,
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500
-                  ),
-                ),
-                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  
                   children: [
+                    Text(
+                      userCards[index].bankName,
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700
+                      ),
+                    ),
+                    const Icon(
+                      Icons.contactless_outlined,
+                      color: Colors.white,
+                      size: 30,
+                    )
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      userCards[index].cardNumber,
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600
+                      ),
+                    ),
                     Text(
                       'Exp: ${userCards[index].expiryDate.month}/${userCards[index].expiryDate.year}',
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
@@ -80,11 +81,37 @@ class _UserCardsState extends State<UserCards> {
                         fontWeight: FontWeight.w500
                       ),
                     ),
+                  ],
+                ),
+                const SizedBox(height: 25),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Balance',
+                          style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700
+                          ),
+                        ),
+                        Text(
+                          '\$${userCards[index].balance}',
+                          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500
+                          ),
+                        ),
+                      ],
+                    ),
                     Text(
-                      '\$${userCards[index].balance}',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      userCards[index].cardType,
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: Colors.white,
-                        fontWeight: FontWeight.w500
+                        fontWeight: FontWeight.w700
                       ),
                     ),
                   ],
@@ -97,7 +124,7 @@ class _UserCardsState extends State<UserCards> {
         controller: controller,
         isLoop: true,
         numberOfCardsDisplayed: 3,
-        cardsCount: userCards.length
+        cardsCount: userCards.length,
       ),
     );
   }
