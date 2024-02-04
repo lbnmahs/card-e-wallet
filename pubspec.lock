@@ -78,6 +78,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_card_swiper:
+    dependency: "direct main"
+    description:
+      name: flutter_card_swiper
+      sha256: "024ba0fbce670eb7f71fa5aaf137de32017f2503fa05260a8e0a872e075a88c6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.0"
   flutter_lints:
     dependency: "direct dev"
     description:
