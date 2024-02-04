@@ -1,3 +1,5 @@
+import 'package:card_manager/data/cards_data.dart';
+import 'package:card_manager/widgets/cards.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,13 +12,11 @@ class HomePage extends StatelessWidget {
         title: const Text('Your Cards'),
         forceMaterialTransparency: true,
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(18.0),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 50),
         child: Column(
           children: [
-            Text('Card 1'),
-            Text('Card 2'),
-            Text('Card 3'),
+            UserCards(availableCards: dummyCards)
           ],
         ),
       ),

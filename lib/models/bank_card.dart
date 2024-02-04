@@ -26,17 +26,17 @@ class BankCard {
       required this.bankName,
       required this.cardType,
       required this.cardNumber,
-      required this.cardHolder,
       required this.expiryDate,
-      required this.gradient
+      required this.gradient,
+      required this.balance
     }
   );
 
   final String bankName;
   final String cardType;
   final String cardNumber;
-  final String cardHolder;
   final DateTime expiryDate;
-  final List<Transaction> transactions;
+  final double balance;
+  final List<Transaction>? transactions;
   final List<Color> gradient;
 }
