@@ -7,24 +7,28 @@ List<BankCard> dummyCards = [
   BankCard(
     [
       Transaction(
-        transactionType: 'Payment',
+        name: 'Netflix',
         amount: 100.00,
-        date: DateTime.now().subtract(const Duration(days: 2))
+        date: DateTime.now().subtract(const Duration(days: 2)),
+        isExpense: true
       ),
       Transaction(
-        transactionType: 'Withdrawal',
+        name: 'Omar Sang',
         amount: 200.00,
-        date: DateTime.now().subtract(const Duration(days: 3))
+        date: DateTime.now().subtract(const Duration(days: 3)),
+        isExpense: false
       ),
       Transaction(
-        transactionType: 'Payment',
+        name: 'Don Pollo',
         amount: 300.00,
-        date: DateTime.now().subtract(const Duration(days: 4))
+        date: DateTime.now().subtract(const Duration(days: 4)),
+        isExpense: false
       ),
       Transaction(
-        transactionType: 'Withdrawal',
+        name: 'Maxima Wynn',
         amount: 400.00,
-        date: DateTime.now().subtract(const Duration(days: 5))
+        date: DateTime.now().subtract(const Duration(days: 5)),
+        isExpense: false
       ),
     ],
     bankName: 'Standard Chartered',
@@ -40,24 +44,28 @@ List<BankCard> dummyCards = [
   BankCard(
     [
       Transaction(
-        transactionType: 'Payment',
+        name: 'Door Dash',
         amount: 100.00,
-        date: DateTime.now().subtract(const Duration(days: 2))
+        date: DateTime.now().subtract(const Duration(days: 2)),
+        isExpense: true
       ),
       Transaction(
-        transactionType: 'Withdrawal',
+        name: 'KFC',
         amount: 200.00,
-        date: DateTime.now().subtract(const Duration(days: 3))
+        date: DateTime.now().subtract(const Duration(days: 3)),
+        isExpense: true
       ),
       Transaction(
-        transactionType: 'Payment',
+        name: 'Zuchinni',
         amount: 300.00,
-        date: DateTime.now().subtract(const Duration(days: 4))
+        date: DateTime.now().subtract(const Duration(days: 4)),
+        isExpense: true
       ),
       Transaction(
-        transactionType: 'Withdrawal',
+        name: 'Thannasis Giannakopoulos',
         amount: 400.00,
-        date: DateTime.now().subtract(const Duration(days: 5))
+        date: DateTime.now().subtract(const Duration(days: 5)),
+        isExpense: false
       ),
     ],
     bankName: 'Equity',
