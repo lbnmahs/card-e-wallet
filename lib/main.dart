@@ -6,8 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 void main() { runApp(const MyApp()); }
 
 final colorScheme = ColorScheme.fromSeed(
-  seedColor: Colors.purpleAccent,
-  background: Colors.purple.shade100
+  seedColor: Colors.blue.shade300,
+  background: Colors.blue
 );
 final theme = ThemeData().copyWith(
   colorScheme: colorScheme,
@@ -30,8 +30,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bank Cards',
       theme: theme,
-      home: const HomePage(),
-      debugShowCheckedModeBanner: false,
+      home: const HomePage()
     );
   }
 }

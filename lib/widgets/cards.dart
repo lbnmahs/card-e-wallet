@@ -26,12 +26,13 @@ class _UserCardsState extends State<UserCards> {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      fit: FlexFit.loose,
+    return SizedBox(
+      width: double.infinity,
+      height: 215,
       child: CardSwiper(
         cardBuilder: ((context, index, horizontalOffsetPercentage, verticalOffsetPercentage) {
           return Container(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(10),
             width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -39,12 +40,15 @@ class _UserCardsState extends State<UserCards> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight
               ),
+              border: Border.all(
+                color: Colors.white.withOpacity(0.7),
+                width: 2
+              ),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
-              
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
