@@ -4,9 +4,14 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 // import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 
 class UserCards extends StatefulWidget {
-  const UserCards({super.key, required this.availableCards});
+  const UserCards({
+    super.key, 
+    required this.availableCards, 
+    required this.onCardSwipe
+  });
 
   final List<BankCard> availableCards;
+  final Function(int) onCardSwipe;
 
   @override
   State<UserCards> createState() {
@@ -17,6 +22,7 @@ class UserCards extends StatefulWidget {
 class _UserCardsState extends State<UserCards> {
   List<BankCard> userCards = [];
   final CardSwiperController controller = CardSwiperController();
+  int currentCardIndex = 0;
 
   @override
   void initState() {
@@ -61,7 +67,7 @@ class _UserCardsState extends State<UserCards> {
                       ),
                     ),
                     const Icon(
-                      Icons.contactless_outlined,
+                      Icons.contactless_rounded,
                       color: Colors.white,
                       size: 30,
                     )
@@ -129,6 +135,15 @@ class _UserCardsState extends State<UserCards> {
         isLoop: true,
         numberOfCardsDisplayed: 3,
         cardsCount: userCards.length,
+        onSwipe: (index, nextIndex, direction) {
+          if(nextIndex != null) {
+            setState(() {
+              currentCardIndex = (currentCardIndex + 1) % widget.availableCards.length; 
+            });
+            widget.onCardSwipe(currentCardIndex);
+          }
+          return true;
+        },
       ),
     );
   }

@@ -1,10 +1,17 @@
 import 'package:card_manager/data/cards_data.dart';
 import 'package:card_manager/widgets/user_cards.dart';
+import 'package:card_manager/widgets/user_transactions.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +26,14 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              UserCards(availableCards: dummyCards),
+              UserCards(
+                availableCards: dummyCards,
+                onCardSwipe: (int index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
+              ),
               ElevatedButton.icon(
                 onPressed: () {}, 
                 icon: const Icon(Icons.add_rounded), 
@@ -36,7 +50,8 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   minimumSize: const Size(double.infinity, 50), 
                 ),
-              )
+              ),
+              UserTransactions(transactions: dummyCards[currentIndex].transactions!)
             ],
           ),
         ),

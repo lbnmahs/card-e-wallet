@@ -118,25 +118,25 @@ List<BankCard> dummyCards = [
   BankCard(
     [
       Transaction(
-        name: 'Netflix',
+        name: 'Olajide',
         amount: 100.00,
         date: DateTime.now().subtract(const Duration(days: 2)),
+        isExpense: false
+      ),
+      Transaction(
+        name: 'Panda Mart',
+        amount: 200.00,
+        date: DateTime.now().subtract(const Duration(days: 3)),
         isExpense: true
       ),
       Transaction(
-        name: 'Omar Sang',
-        amount: 200.00,
-        date: DateTime.now().subtract(const Duration(days: 3)),
-        isExpense: false
-      ),
-      Transaction(
-        name: 'Don Pollo',
+        name: 'Tickets',
         amount: 300.00,
         date: DateTime.now().subtract(const Duration(days: 4)),
-        isExpense: false
+        isExpense: true
       ),
       Transaction(
-        name: 'Maxima Wynn',
+        name: 'Mahihu',
         amount: 400.00,
         date: DateTime.now().subtract(const Duration(days: 5)),
         isExpense: false
@@ -155,25 +155,25 @@ List<BankCard> dummyCards = [
   BankCard(
     [
       Transaction(
-        name: 'Door Dash',
+        name: 'Nike',
         amount: 100.00,
         date: DateTime.now().subtract(const Duration(days: 2)),
         isExpense: true
       ),
       Transaction(
-        name: 'KFC',
+        name: 'Mama Ouma',
         amount: 200.00,
         date: DateTime.now().subtract(const Duration(days: 3)),
         isExpense: true
       ),
       Transaction(
-        name: 'Zuchinni',
+        name: 'Amazon',
         amount: 300.00,
         date: DateTime.now().subtract(const Duration(days: 4)),
         isExpense: true
       ),
       Transaction(
-        name: 'Thannasis Giannakopoulos',
+        name: 'Christopher Collombus',
         amount: 400.00,
         date: DateTime.now().subtract(const Duration(days: 5)),
         isExpense: false
