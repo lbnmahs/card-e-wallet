@@ -23,6 +23,7 @@ class _UserCardsState extends State<UserCards> {
   List<BankCard> userCards = [];
   final CardSwiperController controller = CardSwiperController();
   int currentCardIndex = 0;
+  
 
   @override
   void initState() {
@@ -37,6 +38,9 @@ class _UserCardsState extends State<UserCards> {
       height: 215,
       child: CardSwiper(
         cardBuilder: ((context, index, horizontalOffsetPercentage, verticalOffsetPercentage) {
+          String formattedMonth = userCards[index].expiryDate.month.toString().padLeft(2, '0');
+          String yearLastTwoDigits = userCards[index].expiryDate.year.toString().substring(2);
+          
           return Container(
             padding: const EdgeInsets.all(10),
             width: double.infinity,
@@ -85,7 +89,7 @@ class _UserCardsState extends State<UserCards> {
                       ),
                     ),
                     Text(
-                      'Exp: ${userCards[index].expiryDate.month}/${userCards[index].expiryDate.year}',
+                      '$formattedMonth/$yearLastTwoDigits',
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.w500
