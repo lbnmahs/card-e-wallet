@@ -1,5 +1,5 @@
 import 'package:card_manager/data/cards_data.dart';
-import 'package:card_manager/widgets/cards.dart';
+import 'package:card_manager/widgets/user_cards.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
