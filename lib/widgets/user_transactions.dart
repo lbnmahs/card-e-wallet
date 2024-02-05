@@ -1,5 +1,6 @@
 import 'package:card_manager/models/bank_card.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class UserTransactions extends StatefulWidget {
   const UserTransactions({super.key, required this.transactions});
@@ -33,45 +34,64 @@ class _UserTransactionsState extends State<UserTransactions> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(top: 20),
-      height: 300,
-      width: double.infinity,
-      child: ListView.builder(
-        itemCount: userTransactions.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(
-              userTransactions[index].name,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+          child: Text(
+            'Recent Transactions',
+            style: TextStyle(
+              fontSize: 16,
+              fontFamily: GoogleFonts.poppins().fontFamily,
+              fontWeight: FontWeight.w700,
             ),
-            subtitle: Text(
-              userTransactions[index].formattedDate,
-              style: const TextStyle(
-                color: Colors.grey,
-                fontSize: 16,
-                fontWeight: FontWeight.w500
-              ),
-            ),
-            trailing: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              decoration: BoxDecoration(
-                color: userTransactions[index].isExpense ? Colors.red : Colors.green,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Text(
-                '\$${userTransactions[index].amount.toStringAsFixed(2)}',
-                style: const TextStyle(
-                  fontSize: 12,
-                  color: Colors.white,
+            textAlign: TextAlign.start,
+          ),
+        ),
+        SizedBox(
+          width: double.infinity,
+          height: 350,
+          child: ListView.builder(
+            itemCount: userTransactions.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(
+                  userTransactions[index].name,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15
+                  ),
                 ),
-              ),
-            ),
-          );
-        },
-      ),
+                subtitle: Text(
+                  userTransactions[index].formattedDate,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+                trailing: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: userTransactions[index].isExpense ? Colors.red : Colors.green,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: Text(
+                    '\$${userTransactions[index].amount.toString()}',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

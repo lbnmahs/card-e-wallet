@@ -3,6 +3,7 @@ import 'package:card_manager/widgets/user_cards.dart';
 import 'package:card_manager/widgets/user_transactions.dart';
 import 'package:flutter/material.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -29,9 +30,7 @@ class _HomePageState extends State<HomePage> {
               UserCards(
                 availableCards: dummyCards,
                 onCardSwipe: (int index) {
-                  setState(() {
-                    currentIndex = index;
-                  });
+                  setState(() {currentIndex = index;});
                 },
               ),
               ElevatedButton.icon(
@@ -41,9 +40,7 @@ class _HomePageState extends State<HomePage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.onBackground,
                   foregroundColor: Colors.white,
-                  textStyle: const TextStyle(
-                    fontSize: 18,
-                  ),
+                  textStyle: const TextStyle(fontSize: 18,),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -51,6 +48,7 @@ class _HomePageState extends State<HomePage> {
                   minimumSize: const Size(double.infinity, 50), 
                 ),
               ),
+              const SizedBox(height: 30,),
               UserTransactions(transactions: dummyCards[currentIndex].transactions!)
             ],
           ),
