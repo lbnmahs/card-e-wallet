@@ -52,7 +52,7 @@ class _UserTransactionsState extends State<UserTransactions> {
         ),
         SizedBox(
           width: double.infinity,
-          height: 350,
+          height: 400,
           child: ListView.builder(
             itemCount: userTransactions.length,
             itemBuilder: (context, index) {
