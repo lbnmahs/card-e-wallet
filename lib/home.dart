@@ -1,4 +1,5 @@
 import 'package:card_manager/data/cards_data.dart';
+import 'package:card_manager/widgets/home_buttons.dart';
 import 'package:card_manager/widgets/user_cards.dart';
 import 'package:card_manager/widgets/user_transactions.dart';
 
@@ -17,16 +18,30 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  const Row(
+        title: Row(
           children: [
-            CircleAvatar(
-              radius: 15,
+            const CircleAvatar(
+              radius: 20  ,
               backgroundImage: NetworkImage(
-                'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436180.jpg'
+                'https://i1.sndcdn.com/artworks-79AS3zNyDuB420uC-pKTA2w-t500x500.jpg'
               ),
             ),
-            SizedBox(width: 10,),
-            Text( 'Hello Wynn', ),
+            const SizedBox(width: 10,),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text( 'Hi, Wynn', ),
+                Text(
+                  'Welcome Back!',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    color: Theme.of(context).colorScheme.onBackground.withOpacity(0.6)
+                  )
+                ),
+              ],
+            ),
           ],
         ),
         actions: [
@@ -34,6 +49,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {}, 
             icon: const Icon(Icons.notifications_none_rounded),
             color: Theme.of(context).colorScheme.onBackground,
+            iconSize: 18,
           ),
         ],
         forceMaterialTransparency: true,
@@ -64,7 +80,17 @@ class _HomePageState extends State<HomePage> {
                 minimumSize: const Size(double.infinity, 50), 
               ),
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(height: 15,),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                HomeButton(icon: Icons.contactless_outlined, label: 'Pay'),
+                HomeButton(icon: Icons.qr_code_scanner_rounded, label: 'Scan QR Code'),
+                HomeButton(icon: Icons.arrow_downward_rounded, label: 'Request'),
+                HomeButton(icon: Icons.show_chart_rounded, label: 'Statistics')
+              ],
+            ),
+            const SizedBox(height: 25,),
             UserTransactions(transactions: dummyCards[currentIndex].transactions!)
           ],
         ),

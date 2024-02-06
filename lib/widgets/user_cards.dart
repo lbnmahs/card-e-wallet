@@ -134,7 +134,7 @@ class _UserCardsState extends State<UserCards> {
             )
           );
         }), 
-        backCardOffset: const Offset(0, -40),
+        backCardOffset: const Offset(0, -20),
         controller: controller,
         isLoop: true,
         numberOfCardsDisplayed: 3,
