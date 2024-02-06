@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
         forceMaterialTransparency: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(top: 40, left: 10, right: 10),
+        padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

@@ -15,7 +15,7 @@ class HomeButton extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           color: Theme.of(context).colorScheme.onBackground,
-          width: 2
+          width: 1
         ),
         borderRadius: BorderRadius.circular(16),
       ),
@@ -25,7 +25,7 @@ class HomeButton extends StatelessWidget {
           Icon(
             icon,
             color: Theme.of(context).colorScheme.onBackground,
-            size: 30,
+            size: 25,
           ),
           const SizedBox(height: 5),
           Text(
@@ -33,7 +33,7 @@ class HomeButton extends StatelessWidget {
             style: TextStyle(
               color: Theme.of(context).colorScheme.onBackground,
               fontSize: 12,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w600,
             ),
             textAlign: TextAlign.center,
           )
