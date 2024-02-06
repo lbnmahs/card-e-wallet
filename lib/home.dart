@@ -20,12 +20,12 @@ class _HomePageState extends State<HomePage> {
         title:  const Row(
           children: [
             CircleAvatar(
-              radius: 20,
+              radius: 15,
               backgroundImage: NetworkImage(
                 'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436180.jpg'
               ),
             ),
-            SizedBox(width: 15,),
+            SizedBox(width: 10,),
             Text( 'Hello Wynn', ),
           ],
         ),

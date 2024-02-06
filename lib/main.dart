@@ -20,7 +20,8 @@ final theme = ThemeData().copyWith(
       fontSize: 16,
       fontWeight: FontWeight.w700
     )
-  )
+  ),
+  
 );
 
 class MyApp extends StatelessWidget {
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bank Cards',
       theme: theme,
+      debugShowCheckedModeBanner: false,
       home: const HomePage()
     );
   }
