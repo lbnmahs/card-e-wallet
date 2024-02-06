@@ -1,8 +1,8 @@
 import 'package:card_manager/data/cards_data.dart';
 import 'package:card_manager/widgets/user_cards.dart';
 import 'package:card_manager/widgets/user_transactions.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,7 +17,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Cards'),
+        title:  const Row(
+          children: [
+            CircleAvatar(
+              radius: 25,
+              backgroundImage: NetworkImage(
+                'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436180.jpg'
+              ),
+            ),
+            SizedBox(width: 15,),
+            Text( 'Hello Wynn', ),
+          ],
+        ),
         forceMaterialTransparency: true,
       ),
       body: Padding(

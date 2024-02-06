@@ -13,11 +13,11 @@ final theme = ThemeData().copyWith(
   colorScheme: colorScheme,
   textTheme: GoogleFonts.montserratTextTheme(),
   appBarTheme: AppBarTheme(
-    centerTitle: true,
+    // centerTitle: true,
     titleTextStyle: TextStyle(
       color: colorScheme.onBackground,
       fontFamily: GoogleFonts.poppins().fontFamily,
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: FontWeight.w700
     )
   )

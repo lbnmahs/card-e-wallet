@@ -56,37 +56,39 @@ class _UserTransactionsState extends State<UserTransactions> {
           child: ListView.builder(
             itemCount: userTransactions.length,
             itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(
-                  userTransactions[index].name,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 15
-                  ),
-                ),
-                subtitle: Text(
-                  userTransactions[index].formattedDate,
-                  style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold
-                  ),
-                ),
-                trailing: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: BoxDecoration(
-                    color: userTransactions[index].isExpense ? Colors.red : Colors.green,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Text(
-                    '\$${userTransactions[index].amount.toString()}',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+              return Column(
+                children: [
+                  ListTile(
+                    title: Text(
+                      userTransactions[index].name,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15
+                      ),
+                    ),
+                    subtitle: Text(
+                      userTransactions[index].formattedDate,
+                      style: const TextStyle(
+                        color: Colors.grey,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    trailing: Text(
+                      '\$${userTransactions[index].amount.toString()}',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: userTransactions[index].isExpense ? Colors.red : Colors.green,
+                      ),
                     ),
                   ),
-                ),
+                  Divider(
+                    color: Colors.grey.withOpacity(0.5),
+                    thickness: 0.5,
+                    height: 0.5,
+                  )
+                ],
               );
             },
           ),
