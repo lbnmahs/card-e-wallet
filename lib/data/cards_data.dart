@@ -1,5 +1,3 @@
-// Come up with a list of bank cards that can be exported and used in different files
-
 import 'package:flutter/material.dart';
 import 'package:card_manager/models/bank_card.dart';
 

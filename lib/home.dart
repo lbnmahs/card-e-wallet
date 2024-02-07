@@ -61,9 +61,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             UserCards(
               availableCards: dummyCards,
-              onCardSwipe: (int index) {
-                setState(() {currentIndex = index;});
-              },
+              onCardSwipe: (int index) { setState(() {currentIndex = index;}); },
             ),
             ElevatedButton.icon(
               onPressed: () {}, 
