@@ -85,8 +85,8 @@ class _UserTransactionsState extends State<UserTransactions> {
                     ),
                   ),
                   Divider(
-                    color: Colors.grey.withOpacity(0.5),
-                    thickness: 0.5,
+                    color: Colors.grey.withOpacity(0.7),
+                    thickness: 1,
                     height: 0.5,
                   )
                 ],
