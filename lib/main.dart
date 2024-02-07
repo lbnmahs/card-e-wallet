@@ -6,14 +6,13 @@ import 'package:google_fonts/google_fonts.dart';
 void main() { runApp(const MyApp()); }
 
 final colorScheme = ColorScheme.fromSeed(
-  seedColor: Colors.blue.shade300,
-  background: Colors.blue
+  seedColor: Colors.purple.shade400,
+  background: Colors.blue,
 );
 final theme = ThemeData().copyWith(
   colorScheme: colorScheme,
   textTheme: GoogleFonts.montserratTextTheme(),
   appBarTheme: AppBarTheme(
-    // centerTitle: true,
     titleTextStyle: TextStyle(
       color: colorScheme.onBackground,
       fontFamily: GoogleFonts.poppins().fontFamily,

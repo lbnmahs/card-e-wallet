@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
               label: const Text('Add Card'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Theme.of(context).colorScheme.onBackground,
-                foregroundColor: Colors.white,
+                foregroundColor: Theme.of(context).colorScheme.onPrimary,
                 textStyle: const TextStyle(fontSize: 18,),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -78,14 +78,14 @@ class _HomePageState extends State<HomePage> {
                 minimumSize: const Size(double.infinity, 50), 
               ),
             ),
-            const SizedBox(height: 15,),
+            const SizedBox(height: 20,),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 HomeButton(icon: Icons.contactless_outlined, label: 'Pay'),
-                HomeButton(icon: Icons.qr_code_scanner_rounded, label: 'Scan QR Code'),
+                HomeButton(icon: Icons.qr_code_scanner_rounded, label: 'Scan QR'),
                 HomeButton(icon: Icons.arrow_downward_rounded, label: 'Request'),
-                HomeButton(icon: Icons.show_chart_rounded, label: 'Statistics')
+                HomeButton(icon: Icons.insert_chart_outlined_rounded, label: 'Statistics')
               ],
             ),
             const SizedBox(height: 25,),

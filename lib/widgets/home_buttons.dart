@@ -13,27 +13,31 @@ class HomeButton extends StatelessWidget {
       height: 90,
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Theme.of(context).colorScheme.onBackground,
-          width: 1
-        ),
+        color: Theme.of(context).colorScheme.onBackground.withOpacity(0.9),
+        // border: Border.all(
+        //   color: Theme.of(context).colorScheme.primary,
+        //   width: 1
+        // ),
         borderRadius: BorderRadius.circular(16),
+        
       ),
+      
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Icon(
             icon,
-            color: Theme.of(context).colorScheme.onBackground,
+            color: Theme.of(context).colorScheme.onPrimary,
             size: 25,
           ),
           const SizedBox(height: 5),
           Text(
             label,
             style: TextStyle(
-              color: Theme.of(context).colorScheme.onBackground,
+              color: Theme.of(context).colorScheme.onPrimary,
               fontSize: 12,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w800,
             ),
             textAlign: TextAlign.center,
           )
