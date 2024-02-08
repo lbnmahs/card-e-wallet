@@ -1,16 +1,39 @@
-# card_manager
+# E-Wallet
 
-A new Flutter project.
+Simple e-wallet that majorly focuses on implementing card swiping when a user has multiple cards.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run the application, run the following commands
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone the repository
+    ```git
+       git clone https://github.com/lbnmahs/bank-e-wallet.git
+    ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Change the directory
+    ```git
+       cd bank-e-wallet
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Install dependencies
+    ```dart
+       flutter pub add google_fonts
+       flutter pub add intl
+       flutter pub add flutter_card_swiper
+    ```
+
+4. Run the application
+    ```dart
+       flutter run
+    ```
+## Contributing
+
+Contributions are welcome! If you find any bugs or have suggestions for improvement, please open an issue or submit a pull request.
+
+
+## Acknowledgements
+
+* Flutter, an open-source UI software development toolkit, developed this app.
+
+Happy Coding 🚀
