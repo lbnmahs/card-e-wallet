@@ -18,9 +18,7 @@ To run the application, run the following commands
 
 3. Install dependencies
     ```dart
-       flutter pub add google_fonts
-       flutter pub add intl
-       flutter pub add flutter_card_swiper
+       flutter pub add google_fonts, intl, flutter_card_swiper
     ```
 
 4. Run the application
