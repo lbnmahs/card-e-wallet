@@ -40,7 +40,7 @@ class _UserTransactionsState extends State<UserTransactions> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: Text(
             'Recent Transactions',
             style: TextStyle(
