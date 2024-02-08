@@ -1,6 +1,6 @@
 # E-Wallet
 
-Simple e-wallet that majorly focuses on implementing card swiping when a user has multiple cards.
+Simple e-wallet that majorly focuses on implementing card swiping when a user has multiple cards. When a card is swiped, the list of transactions changes to display the transactions of the topmost card.
 
 ## Getting Started
 
