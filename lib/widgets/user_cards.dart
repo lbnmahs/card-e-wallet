@@ -38,13 +38,18 @@ class _UserCardsState extends State<UserCards> {
       width: double.infinity,
       height: 215,
       child: CardSwiper(
-        cardBuilder: ((context, index, horizontalOffsetPercentage, verticalOffsetPercentage) {
+        cardBuilder: ((
+          context, index, 
+          horizontalOffsetPercentage, verticalOffsetPercentage
+        ) {
+          final userCard = userCards[index];
+          
           return Container(
             padding: const EdgeInsets.all(10),
             width: double.infinity,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [userCards[index].gradient[0], userCards[index].gradient[1]],
+                colors: [userCard.gradient[0], userCard.gradient[1]],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight
               ),
@@ -54,7 +59,7 @@ class _UserCardsState extends State<UserCards> {
               ),
               borderRadius: BorderRadius.circular(16)
             ),
-            child: UserCardDetails(cardInfo: userCards[index])
+            child: UserCardDetails(cardInfo: userCard)
           );
         }), 
         backCardOffset: const Offset(0, -20),
