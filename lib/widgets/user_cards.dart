@@ -1,4 +1,5 @@
 import 'package:card_manager/models/bank_card.dart';
+import 'package:card_manager/widgets/usercard_details.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
@@ -38,9 +39,6 @@ class _UserCardsState extends State<UserCards> {
       height: 215,
       child: CardSwiper(
         cardBuilder: ((context, index, horizontalOffsetPercentage, verticalOffsetPercentage) {
-          String formattedMonth = userCards[index].expiryDate.month.toString().padLeft(2, '0');
-          String yearLastTwoDigits = userCards[index].expiryDate.year.toString().substring(2);
-          
           return Container(
             padding: const EdgeInsets.all(10),
             width: double.infinity,
@@ -54,84 +52,9 @@ class _UserCardsState extends State<UserCards> {
                 color: Colors.white.withOpacity(0.7),
                 width: 2
               ),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(16)
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      userCards[index].bankName,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700
-                      ),
-                    ),
-                    const Icon(
-                      Icons.contactless_rounded,
-                      color: Colors.white,
-                      size: 30,
-                    )
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      userCards[index].cardNumber,
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600
-                      ),
-                    ),
-                    Text(
-                      '$formattedMonth/$yearLastTwoDigits',
-                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 25),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Balance',
-                          style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700
-                          ),
-                        ),
-                        Text(
-                          '\$${userCards[index].balance}',
-                          style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500
-                          ),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      userCards[index].cardType,
-                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w700
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            )
+            child: UserCardDetails(cardInfo: userCards[index])
           );
         }), 
         backCardOffset: const Offset(0, -20),
