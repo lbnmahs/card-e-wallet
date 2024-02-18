@@ -23,8 +23,9 @@ class _HomePageState extends State<HomePage> {
             const CircleAvatar(
               radius: 20  ,
               backgroundImage: NetworkImage(
-                'https://i1.sndcdn.com/artworks-79AS3zNyDuB420uC-pKTA2w-t500x500.jpg'
+                'https://i.redd.it/whats-drakes-most-sus-moment-v0-24unk692z53c1.jpg?width=500&format=pjpg&auto=webp&s=11aeeb8b68d2770622aa2be2d0cc240f5d17a503'
               ),
+              
             ),
             const SizedBox(width: 10,),
             Column(
@@ -54,43 +55,45 @@ class _HomePageState extends State<HomePage> {
         ],
         forceMaterialTransparency: true,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            UserCards(
-              availableCards: dummyCards,
-              onCardSwipe: (int index) { setState(() {currentIndex = index;}); },
-            ),
-            ElevatedButton.icon(
-              onPressed: () {}, 
-              icon: const Icon(Icons.add_rounded), 
-              label: const Text('Add Card'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.onBackground,
-                foregroundColor: Theme.of(context).colorScheme.onPrimary,
-                textStyle: const TextStyle(fontSize: 18,),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                minimumSize: const Size(double.infinity, 50), 
+      body: Center(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              UserCards(
+                availableCards: dummyCards,
+                onCardSwipe: (int index) { setState(() {currentIndex = index;}); },
               ),
-            ),
-            const SizedBox(height: 20,),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                HomeButton(icon: Icons.contactless_outlined, label: 'Pay'),
-                HomeButton(icon: Icons.qr_code_scanner_rounded, label: 'Scan QR'),
-                HomeButton(icon: Icons.arrow_downward_rounded, label: 'Request'),
-                HomeButton(icon: Icons.insert_chart_outlined_rounded, label: 'Statistics')
-              ],
-            ),
-            const SizedBox(height: 25,),
-            UserTransactions(transactions: dummyCards[currentIndex].transactions!)
-          ],
+              ElevatedButton.icon(
+                onPressed: () {}, 
+                icon: const Icon(Icons.add_rounded), 
+                label: const Text('Add Card'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.onBackground,
+                  foregroundColor: Theme.of(context).colorScheme.onPrimary,
+                  textStyle: const TextStyle(fontSize: 18,),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  minimumSize: const Size(double.infinity, 50), 
+                ),
+              ),
+              const SizedBox(height: 20,),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  HomeButton(icon: Icons.contactless_outlined, label: 'Pay'),
+                  HomeButton(icon: Icons.qr_code_scanner_rounded, label: 'Scan QR'),
+                  HomeButton(icon: Icons.arrow_downward_rounded, label: 'Request'),
+                  HomeButton(icon: Icons.insert_chart_outlined_rounded, label: 'Statistics')
+                ],
+              ),
+              const SizedBox(height: 25,),
+              UserTransactions(transactions: dummyCards[currentIndex].transactions!)
+            ],
+          ),
         ),
       ),
     );
