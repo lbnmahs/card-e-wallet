@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
             const CircleAvatar(
               radius: 20  ,
               backgroundImage: NetworkImage(
-                'https://i.redd.it/whats-drakes-most-sus-moment-v0-24unk692z53c1.jpg?width=500&format=pjpg&auto=webp&s=11aeeb8b68d2770622aa2be2d0cc240f5d17a503'
+                'https://drakeanitamaxwin.com/wp-content/uploads/2023/12/Drake-Anita-Max-Wynn-Hat-Cap-embroidery.jpg'
               ),
               
             ),
