@@ -22,13 +22,14 @@ class UserCards extends StatefulWidget {
 
 class _UserCardsState extends State<UserCards> {
   List<BankCard> userCards = [];
+  // swipe controller
   final CardSwiperController controller = CardSwiperController();
-  int currentCardIndex = 0;
+  int currentCardIndex = 0; // current card index
   
-
   @override
   void initState() {
     super.initState();
+    // set the user cards to be a copy of the available cards list
     userCards = widget.availableCards;
   }
 
@@ -39,11 +40,13 @@ class _UserCardsState extends State<UserCards> {
       height: 215,
       child: CardSwiper(
         cardBuilder: ((
-          context, index, 
-          horizontalOffsetPercentage, verticalOffsetPercentage
+          context, 
+          index, 
+          horizontalOffsetPercentage, 
+          verticalOffsetPercentage
         ) {
           final userCard = userCards[index];
-          
+          // Single card widget
           return Container(
             padding: const EdgeInsets.all(10),
             width: double.infinity,
@@ -63,10 +66,11 @@ class _UserCardsState extends State<UserCards> {
           );
         }), 
         backCardOffset: const Offset(0, -20),
-        controller: controller,
+        controller: controller, // controller to trigger swipe actions
         isLoop: true,
         numberOfCardsDisplayed: 3,
         cardsCount: userCards.length,
+        // function that indicates the action to be taken after a card is swiped 
         onSwipe: (index, nextIndex, direction) {
           if(nextIndex != null) {
             setState(() {

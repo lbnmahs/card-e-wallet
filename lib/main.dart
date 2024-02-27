@@ -19,7 +19,6 @@ final theme = ThemeData().copyWith(
       fontWeight: FontWeight.w700
     )
   ),
-  
 );
 
 class MyApp extends StatelessWidget {
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bank Cards',
+      title: 'Cards E-Wallet',
       theme: theme,
       debugShowCheckedModeBanner: false,
       home: const HomePage()

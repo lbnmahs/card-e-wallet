@@ -5,24 +5,23 @@ import 'package:google_fonts/google_fonts.dart';
 
 class UserTransactions extends StatefulWidget {
   const UserTransactions({super.key, required this.transactions});
-
   final List<Transaction> transactions;
 
   @override
-  State<UserTransactions> createState() {
-    return _UserTransactionsState();
-  }
+  State<UserTransactions> createState() => _UserTransactionsState(); 
 }   
 
 class _UserTransactionsState extends State<UserTransactions> {
   List<Transaction> userTransactions = [];
 
+  // set the user transactions to be a copy of the available transactions list
   @override
   void initState() {
     super.initState();
     userTransactions = widget.transactions;
   }
 
+  // update the user transactions if the card is swiped
   @override
   void didUpdateWidget(UserTransactions oldWidget) {
     super.didUpdateWidget(oldWidget);

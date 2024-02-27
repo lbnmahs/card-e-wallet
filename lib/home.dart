@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // App Bar
       appBar: AppBar(
         title: Row(
           children: [
@@ -55,16 +56,21 @@ class _HomePageState extends State<HomePage> {
         ],
         forceMaterialTransparency: true,
       ),
+      // App Body
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.only(top: 20, left: 10, right: 10),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              // Swipable Bank Cards
               UserCards(
                 availableCards: dummyCards,
-                onCardSwipe: (int index) { setState(() {currentIndex = index;}); },
+                onCardSwipe: (int index) { 
+                  setState(() => currentIndex = index); 
+                },
               ),
+              // Add Card Button
               ElevatedButton.icon(
                 onPressed: () {}, 
                 icon: const Icon(Icons.add_rounded), 
@@ -81,6 +87,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 20,),
+              // List of Home Buttons
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -91,7 +98,10 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 25,),
-              UserTransactions(transactions: dummyCards[currentIndex].transactions!)
+              // List of Transactions for the Visible Card
+              UserTransactions(
+                transactions: dummyCards[currentIndex].transactions!
+              )
             ],
           ),
         ),
