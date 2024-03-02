@@ -19,9 +19,9 @@ To run the application, run the following commands
        cd bank-e-wallet
     ```
 
-3. Install dependencies
+3. Fetch dependencies
     ```dart
-       flutter pub add google_fonts, intl, flutter_card_swiper
+       flutter pub get
     ```
 
 4. Run the application
